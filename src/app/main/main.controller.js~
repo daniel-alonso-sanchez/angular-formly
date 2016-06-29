@@ -31,8 +31,10 @@ vm.options = {};
         type: 'password',
         label: 'Password',
         placeholder: 'Password'
-      }
-	
+      },
+	expressionProperties: {
+		'templateOptions.disabled': '!model.email'
+      	}
       
     },
     {
@@ -43,10 +45,7 @@ vm.options = {};
         label: 'File input',
         description: 'Example block-level help text here',
         url: 'https://example.com/upload'
-      },
-expressionProperties: {
-		'templateOptions.disabled': '!model.checked'
-      	}
+      }
     },
     {
       key: 'checked',
