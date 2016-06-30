@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec) {
+  function MainController($timeout, webDevTec,fieldsService) {
     var vm = this;
 
     vm.awesomeThings = [];
@@ -14,6 +14,7 @@
     vm.creationDate = 1467200083570;
    vm.user = {};
 vm.options = {};
+	fieldsService.get({user: 1});
   vm.userFields = [
     {
       key: 'email',
