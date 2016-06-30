@@ -1,47 +1,130 @@
 {
-  "forms": [
-    { 
-		"id": 1, 
-		"fields":[
-		  {
-			"key": "email",
-			"type": "input",
-			"templateOptions": {
-			  "type": "text",
-			  "label": "Email address",
-			  "placeholder": "Enter email"
-			}
-		  },
-		  {
-			"key": "password",
-			"type": "input",
-			"templateOptions": {
-			  "type": "password",
-			  "label": "Password",
-			  "placeholder": "Password"
-			}
-		  },
-		  {
-			"key": "file",
-			"type": "input",
-			"templateOptions": {
-			 "type": "file",
-			  "label": "File input",
-			  "description": "Example block-level help text here",
-			  "url": "https://example.com/upload"
-			},
-			"expressionProperties": {
-			  "templateOptions.disabled": "!model.checked"
-			}
-		  },
-		  {
-			"key": "checked",
-			"type": "checkbox",
-			"templateOptions": {
-			  "label": "Check me out"
-			}
-		  }
-		]	
-	}
-  ]
- }
+   "forms":[
+      {
+         "id":1,
+         "fields":[
+            {
+               "key":"email",
+               "type":"input",
+               "templateOptions":{
+                  "type":"text",
+                  "label":"Email address",
+                  "placeholder":"Enter email"
+               }
+            },
+            {
+               "key":"password",
+               "type":"input",
+               "templateOptions":{
+                  "type":"password",
+                  "label":"Password",
+                  "placeholder":"Password"
+               }
+            },
+            {
+               "key":"file",
+               "type":"input",
+               "templateOptions":{
+                  "type":"file",
+                  "label":"File input",
+                  "description":"Example block-level help text here",
+                  "url":"https://example.com/upload"
+               },
+               "expressionProperties":{
+                  "templateOptions.disabled":"!model.checked"
+               }
+            },
+            {
+               "key":"checked",
+               "type":"checkbox",
+               "templateOptions":{
+                  "label":"Check me out"
+               }
+            }
+         ]
+      },
+      {
+         "id":2,
+         "fields":[
+      {
+        "className": "row",
+        "fieldGroup": [
+          {
+            "className": "col-xs-6",
+            "type": "input",
+            "key": "firstName",
+            "templateOptions": {
+              "label": "First Name"
+            }
+          },
+          {
+            "className": "col-xs-6",
+            "type": "input",
+            "key": "lastName",
+            "templateOptions": {
+              "label": "Last Name"
+            },
+            "expressionProperties": {
+              "templateOptions.disabled": "!model.firstName"
+            }
+          }
+        ]
+      },
+      {
+        "className":"section-label",
+        "template": "<hr /><div><strong>Address:</strong></div>"
+      },
+      {
+        "className": "row",
+        "fieldGroup": [
+          {
+            "className": "col-xs-6",
+            "type": "input",
+            "key": "street",
+            "templateOptions": {
+              "label": "Street"
+            }
+          },
+          {
+            "className": "col-xs-3",
+            "type": "input",
+            "key": "cityName",
+            "templateOptions": {
+              "label": "City"
+            }
+          },
+          {
+            "className": "col-xs-3",
+            "type": "input",
+            "key": "zip",
+            "templateOptions": {
+              "type": "number",
+              "label": "Zip",
+              "max": 99999,
+              "min": 0,
+              "pattern": "\\d{5}"
+            }
+          }
+        ]
+      },
+      {
+        "template": "<hr />"
+      },
+      {
+        "type": "input",
+        "key": "otherInput",
+        "templateOptions": {
+          "label": "Other Input"
+        }
+      },
+      {
+        "type": "checkbox",
+        "key": "otherToo",
+        "templateOptions": {
+          "label": "Other Checkbox"
+        }
+      }
+    ]
+      }
+   ]
+}

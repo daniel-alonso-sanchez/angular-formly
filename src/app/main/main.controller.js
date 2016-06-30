@@ -12,51 +12,13 @@
     vm.awesomeThings = [];
     vm.classAnimation = '';
     vm.creationDate = 1467200083570;
-   vm.user = {};
-vm.options = {};
-	fieldsService.get({user: 1});
-  vm.userFields = [
-    {
-      key: 'email',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'Email address',
-        placeholder: 'Enter email'
-      }
-    },
-    {
-      key: 'password',
-      type: 'input',
-      templateOptions: {
-        type: 'password',
-        label: 'Password',
-        placeholder: 'Password'
-      }
-	
-      
-    },
-    {
-      key: 'file',
-      type: 'input',
-      templateOptions: {
-		type: 'file',
-        label: 'File input',
-        description: 'Example block-level help text here',
-        url: 'https://example.com/upload'
-      },
-expressionProperties: {
-		'templateOptions.disabled': '!model.checked'
-      	}
-    },
-    {
-      key: 'checked',
-      type: 'checkbox',
-      templateOptions: {
-        label: 'Check me out'
-      }
-    }
-  ];
+    vm.user = {};
+	vm.options = {};
+	var response=fieldsService.get({id: 2});
+		response.$promise.then(function(data) {
+			vm.userFields=data.fields;
+	});
+   //vm.userFields
   
   vm.onSubmit = onSubmit;
  
